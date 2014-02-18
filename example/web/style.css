@@ -1,0 +1,59 @@
+button,
+textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+textarea {
+    height: 20em;
+}
+
+button {
+    height: 3em;
+    font-weight: bold;
+    font-size: 16px;
+
+    border: 1px solid rgba(0, 0, 0, 0.30);
+    background: #729fcf;
+    color: #fff;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.10);
+}
+
+button:focus,
+button:active {
+    outline: none;
+}
+
+html {
+    font-family: sans-serif;
+    background: #eee;
+    color: #222;
+}
+
+textarea,
+.line {
+    font-family: Consolas, monospace;
+    font-size: 14px;
+}
+
+#the-code {
+    height: 20em;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#stdout {
+    background: #fff;
+    min-height: 10em;
+    border: 1px solid #ccc;
+}
+
+.line {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 6px 12px;
+}
+
+.line:first-child {
+    border-top-color: transparent;
+}

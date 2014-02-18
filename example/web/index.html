@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hello, world!</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="parser.js"></script>
+    </head>
+    <body>
+        <div id="the-code">twice (
+    twice (
+        count.
+        count.
+    ).
+    count.
+).
+twice (count.).
+</div>
+        <button id="compile-and-run">Run</button>
+        <div id="stdout"></div>
+        <script src="ace/ace.js"></script>
+        <script>
+            var editor = ace.edit("the-code");
+            // List of themes: https://github.com/ajaxorg/ace/tree/master/lib/ace/theme
+            editor.setTheme("ace/theme/eclipse");
+            editor.setKeyboardHandler("ace/keyboard/vim");
+        </script>
+        <script src="main.js"></script>
+    </body>
+</html>
