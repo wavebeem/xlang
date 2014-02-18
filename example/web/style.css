@@ -53,11 +53,12 @@ textarea,
 
 #stdout {
     background: #fff;
-    min-height: 10em;
+    min-height: 60px;
     border: 1px solid #ccc;
 }
 
 .line {
+    font-size: 14px;
     border-top: 1px solid rgba(0, 0, 0, 0.06);
     padding: 6px 12px;
 }
