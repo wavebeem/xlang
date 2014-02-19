@@ -3,37 +3,44 @@
 %%
 
 program
-: statements EOF
+: statement+ EOF
 {
     return {
         type: "AST",
-        data: $$
+        data: $1
     };
 }
 ;
 
-statements: statement+;
+block
+: LPAREN statement+ RPAREN
+{
+    $$ = {
+        type: "BLOCK",
+        body: $2
+    };
+}
+;
 
 statement
-: compound_statement
-| simple_statement
+: compound_statement PERIOD
+| simple_statement PERIOD
 ;
 
 compound_statement
-: TWICE LPAREN statements RPAREN PERIOD
+: TWICE block
 {
     $$ = {
         type: "TWICE",
-        body: $statements
+        body: $block
     };
 }
 ;
 
 simple_statement
-: COUNT PERIOD
-{
-    $$ = {
-        type: "COUNT"
-    };
-}
+: COUNT { $$ = { type: "COUNT"   }; }
+| UP    { $$ = { type: "UP"      }; }
+| DOWN  { $$ = { type: "DOWN"    }; }
+| LEFT  { $$ = { type: "LEFT"    }; }
+| RIGHT { $$ = { type: "RIGHT"   }; }
 ;
