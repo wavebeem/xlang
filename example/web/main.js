@@ -98,7 +98,7 @@ var runHelpers = {
     UP      : function(node, cc) { env.moveBy(0, +state.stepSize); exec(cc); },
     DOWN    : function(node, cc) { env.moveBy(0, -state.stepSize); exec(cc); },
     LEFT    : function(node, cc) { env.moveBy(-state.stepSize, 0); exec(cc); },
-    RIGHT   : function(node, cc) { env.moveBy(+state.stepSize, 0); exec(cc); },
+    RIGHT   : function(node, cc) { env.moveBy(+state.stepSize, 0); exec(cc); }
 };
 (function() {
     this.AST = this.BLOCK
