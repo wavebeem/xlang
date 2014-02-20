@@ -3,13 +3,17 @@
 
 \s+                     /* skip whitespace */
 
+\d+                     return "NUM"
+
 'twice'                 return "TWICE"
-'count'                 return "COUNT"
 
 'up'                    return "UP"
 'down'                  return "DOWN"
 'left'                  return "LEFT"
 'right'                 return "RIGHT"
+'count'                 return "COUNT"
+
+'wait'                  return "WAIT"
 
 '('                     return "LPAREN"
 ')'                     return "RPAREN"

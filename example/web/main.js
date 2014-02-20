@@ -36,6 +36,7 @@ var env = {
         var text = document.createTextNode(x);
         line.appendChild(text);
         stdout.appendChild(line);
+        stdout.scrollTop = stdout.scrollHeight;
     },
     nextColor: (function() {
         var n = 0;
@@ -112,7 +113,7 @@ var compileAndRun = function() {
         console.info("END!");
     });
 };
-document.getElementById("compile-and-run").onclick = compileAndRun;
+document.getElementById("program-start").onclick = compileAndRun;
 var escreen = document.getElementById("screen");
 var resolution = 1000;
 escreen.width  = resolution;

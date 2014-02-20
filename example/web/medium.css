@@ -1,0 +1,11 @@
+#stdout {
+    margin-left: 410px;
+}
+
+#screen {
+    width:  400px;
+    height: 400px;
+
+    position: absolute;
+    left: 0px;
+}

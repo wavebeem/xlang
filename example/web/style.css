@@ -1,11 +1,9 @@
-button,
-textarea {
-    width: 100%;
-    margin-bottom: 10px;
+* {
+    box-sizing: border-box;
 }
 
-textarea {
-    height: 20em;
+button {
+    margin-bottom: 10px;
 }
 
 button {
@@ -54,25 +52,38 @@ textarea,
     font-size: 16px;
 }
 
-#stdout {
-    background: #fff;
-    min-height: 60px;
-    border: 1px solid #ccc;
-}
-
 .line {
     font-size: 14px;
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     padding: 6px 12px;
-}
-
-.line:first-child {
-    border-top-color: transparent;
 }
 
 #screen {
     background: white;
-    width: 400px;
     border: 1px solid #ccc;
     margin-bottom: 10px;
+
+    width: 100%;
+    display: block;
 }
+
+#stdout {
+    background: #fff;
+    min-height: 60px;
+    height: 400px;
+    border: 1px solid #ccc;
+
+    overflow-y: auto;
+}
+
+#dev-area,
+#display-area {
+    position: relative;
+}
+
+#program-toolbar button {
+    min-width: 10em;
+}
+
+#program-start { background-color: #4e9a06; }
+#program-stop  { background-color: #cc0000; }

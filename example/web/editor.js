@@ -9,7 +9,7 @@
         "up.",
         "right.",
         "right.",
-        "twice (count. twice (count.).)."
+        "twice (count. twice (twice (count. count. count.).).)."
     ].join("\n");
 
     var editor = ace.edit(theCode);
