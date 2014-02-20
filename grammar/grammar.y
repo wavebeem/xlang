@@ -3,21 +3,23 @@
 %%
 
 program
-: statement+ EOF
+: statements EOF
 {
     return {
         type: "AST",
-        data: $1
+        body: $statements
     };
 }
 ;
 
+statements: statement+;
+
 block
-: LPAREN statement+ RPAREN
+: LPAREN statements RPAREN
 {
     $$ = {
         type: "BLOCK",
-        body: $2
+        body: $statements
     };
 }
 ;

@@ -70,5 +70,9 @@ module.exports = function(grunt) {
     ].forEach(grunt.loadNpmTasks);
 
 
-    grunt.registerTask('default', ['jshint', 'jison', 'mochaTest']);
+    // grunt.registerTask('default', ['jshint', 'jison', 'mochaTest']);
+    grunt.registerTask('default', [
+        'jshint',
+        'jison'
+    ]);
 };

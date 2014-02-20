@@ -1,16 +1,26 @@
 (function(GLOBAL) {
-    var editor = ace.edit("the-code");
-    var session = editor.getSession();
+    var theCode = document.getElementById("the-code");
+    var code = [
+        "twice (count. up.).",
+        "left.",
+        "twice (count. down.).",
+        "left. count.",
+        "twice (left.).",
+        "up.",
+        "right.",
+        "right.",
+        "twice (count. twice (count.).)."
+    ].join("\n");
 
+    var editor = ace.edit(theCode);
     // List of themes: https://github.com/ajaxorg/ace/tree/master/lib/ace/theme
     editor.setTheme("ace/theme/github");
-    // editor.setKeyboardHandler("ace/keyboard/vim");
-    session.setTabSize(4);
-    session.setUseSoftTabs(true);
-
-    editor.setValue("");
-    editor.insert("twice (count. up.).\nleft.\ntwice (count. down.).\nleft. count.\ntwice (left.).\nup.\nright.\nright.\ntwice (count. twice (count.).).");
-    // editor.insert("twice (up.). up.");
+    editor.session.setValue(code);
+    if (localStorage.vim) {
+        editor.setKeyboardHandler("ace/keyboard/vim");
+    }
+    editor.session.setTabSize(4);
+    editor.session.setUseSoftTabs(true);
 
     GLOBAL.editor = editor;
 })(this);

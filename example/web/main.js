@@ -21,7 +21,7 @@ function init() {
     ctx.lineCap = "round";
 }
 
-var breatheTime = 0;
+var breatheTime = 2;
 function exec(fun) {
     setTimeout(fun, breatheTime);
 }
@@ -72,13 +72,6 @@ var env = {
 };
 var state = {};
 var runHelpers = {
-    AST: function(node, cc) {
-        console.log(node.data);
-        run({
-            type: "BLOCK",
-            body: node.data
-        }, cc);
-    },
     BLOCK: function(node, cc) {
         if (node.body.length === 0) {
             exec(cc);
@@ -106,6 +99,9 @@ var runHelpers = {
     LEFT    : function(node, cc) { env.moveBy(-state.stepSize, 0); exec(cc); },
     RIGHT   : function(node, cc) { env.moveBy(+state.stepSize, 0); exec(cc); },
 };
+(function() {
+    this.AST = this.BLOCK
+}).call(runHelpers);
 
 var compileAndRun = function() {
     var ast = parser.parse(editor.getValue());
@@ -118,9 +114,6 @@ var compileAndRun = function() {
 };
 document.getElementById("compile-and-run").onclick = compileAndRun;
 var escreen = document.getElementById("screen");
-escreen.onclick = function(event) {
-    escreen.classList.toggle("fullscreen");
-};
 var resolution = 1000;
 escreen.width  = resolution;
 escreen.height = resolution;
