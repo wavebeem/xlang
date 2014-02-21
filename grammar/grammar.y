@@ -12,8 +12,6 @@ program
 }
 ;
 
-statements: statement+;
-
 block
 : LPAREN statements RPAREN
 {
@@ -22,6 +20,10 @@ block
         body: $statements
     };
 }
+;
+
+statements
+: statement+
 ;
 
 statement
