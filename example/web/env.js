@@ -2,15 +2,25 @@
     var stdout;
     var code;
     var start;
+    var stop;
     var escreen;
-    var resolution = 1000;
+    var resolution;
     var ctx;
     var runtime;
+    var onProgramEnd = function() {
+        start.disabled = false;
+        stop .disabled = true;
+    };
+    var onProgramStart = function() {
+        start.disabled = true;
+        stop .disabled = false;
+    };
     var env = {
         oneTimeInit: function() {
             stdout  = document.getElementById('stdout');
             code    = document.getElementById("the-code");
             start   = document.getElementById("program-start")
+            stop    = document.getElementById("program-stop")
             escreen = document.getElementById("screen");
 
             start.onclick = function() {
@@ -20,20 +30,21 @@
 
                 runtime = compile(editor.getValue());
                 env.init();
-                runtime.start(function() {
-                    console.info("DONE");
-                });
+                onProgramStart();
+                runtime.start(onProgramEnd);
             };
 
             stop.onclick = function() {
                 if (runtime) {
                     runtime.stop();
+                    onProgramEnd();
                 }
             };
         },
         init: function() {
             stdout.innerHTML = "";
 
+            resolution = 1000;
             escreen.width  = resolution;
             escreen.height = resolution;
             ctx = escreen.getContext("2d");
