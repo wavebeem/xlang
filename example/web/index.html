@@ -3,25 +3,33 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <title>Hello, world!</title>
-        <link href="style.css"  rel="stylesheet">
-        <link href="medium.css" rel="stylesheet" media="screen and (min-width:  800px)">
-        <link href="wide.css"   rel="stylesheet" media="screen and (min-width: 1200px)">
-        <script src="parser.js"></script>
-        <script src="ace/ace.js"></script>
+        <title>Xlang</title>
+        <link href="style.css"   rel="stylesheet">
+        <link href="icomoon.css" rel="stylesheet">
+        <link href="medium.css"  rel="stylesheet" media="screen and (min-width:  800px)">
+        <link href="wide.css"    rel="stylesheet" media="screen and (min-width: 1200px)">
     </head>
     <body>
         <div id="dev-area">
             <div id="the-code"></div>
             <div id="program-toolbar">
-                <button id="program-start">Go</button>
-                <button id="program-stop" disabled="disabled">Stop</button>
+                <button id="program-start">
+                    <span class="icon-play"></span>
+                    <!-- Play-->
+                </button>
+                <button id="program-stop" disabled="disabled">
+                    <span class="icon-stop"></span>
+                    <!-- Stop-->
+                </button>
             </div>
         </div>
         <div id="display-area">
             <canvas id="screen"></canvas>
             <div id="stdout"></div>
         </div>
+
+        <script src="parser.js"></script>
+        <script src="ace/ace.js"></script>
         <script src="editor.js"></script>
         <script src="main.js"></script>
         <script src="env.js"></script>
