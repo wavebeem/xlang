@@ -8,8 +8,6 @@ button {
     margin: 0;
     border: 0;
     border: 1px solid rgba(0, 0, 0, 0.10);
-    border-top-color: rgba(0, 0, 0, 0.05);
-    border-bottom-color: rgba(0, 0, 0, 0.20);
     /* border-radius: 0.80em;*/
     background: #729fcf;
     color: #fff;
@@ -99,18 +97,32 @@ textarea,
 }
 
 #program-toolbar button {
-    border-radius: 50%;
+    /* border-radius: 50%;*/
+    border-radius: 0.50em;
+    /* border-radius: 1em;*/
+    /* border-radius: 2px;*/
 
     margin-bottom: 10px;
     margin-right: 0.5em;
 
-    transition: background 0.15s;
+    transition:
+        box-shadow 0.15s,
+        background 0.15s;
 
-    height: 2.75em;
-    width:  2.75em;
+    /* height: 2.75em;*/
+    height: 2.50em;
+    width:  4.50em;
 
     font-size:   16px;
     line-height: 16px;
+
+    position: relative;
+    z-index: 100;
+}
+
+#program-toolbar button:hover {
+    box-shadow: 0 0 0 5px rgba(128, 192, 224, 0.50);
+    cursor: pointer;
 }
 
 #program-start { background-color: #4e9a06; }
