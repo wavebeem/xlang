@@ -1,3 +1,9 @@
+function readOnly(observable) {
+    return ko.computed(function() {
+        return observable();
+    });
+}
+
 (function(GLOBAL) {
     var theCode = document.getElementById("the-code");
     var code = [
@@ -9,7 +15,20 @@
         "up.",
         "right.",
         "right.",
-        "twice (count. twice (twice (count. count. count.).).)."
+        "twice (",
+        "   down.",
+        "   right.",
+        "   down.",
+        "   right.",
+        "   count.",
+        "   twice (",
+        "       twice (",
+        "           twice (",
+        "               count.",
+        "           ).",
+        "       ).",
+        "   ).",
+        ")."
     ].join("\n");
 
     var editor = ace.edit(theCode);

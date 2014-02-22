@@ -4,22 +4,32 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <title>Xlang</title>
-        <link href="style.css"   rel="stylesheet">
-        <link href="icomoon.css" rel="stylesheet">
-        <link href="medium.css"  rel="stylesheet" media="screen and (min-width:  800px)">
-        <link href="wide.css"    rel="stylesheet" media="screen and (min-width: 1200px)">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="icomoon/style.css">
+        <link rel="stylesheet" href="medium.css" media="screen and (min-width:  800px)">
+        <link rel="stylesheet" href="wide.css"   media="screen and (min-width: 1200px)">
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.0.0/knockout-min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
     </head>
     <body>
         <div id="dev-area">
             <div id="the-code"></div>
             <div id="program-toolbar">
-                <button id="program-start">
-                    <span class="icon-play"></span>
-                    <!-- Play-->
-                </button>
-                <button id="program-stop" disabled="disabled">
+                <button id="program-start" data-bind="click: playPause">
+                    <span data-bind="
+                        css: 'icon-' + (canPlay() ? 'play' : 'pause')
+                    "></span>
+                </button
+                ><button id="program-step" data-bind="click: step">
+                    <span class="icon-forward"></span>
+                </button
+                ><button
+                    id="program-stop"
+                    disabled
+                    data-bind="enable: notStopped, click: stop"
+                >
                     <span class="icon-stop"></span>
-                    <!-- Stop-->
                 </button>
             </div>
         </div>
@@ -31,7 +41,7 @@
         <script src="parser.js"></script>
         <script src="ace/ace.js"></script>
         <script src="editor.js"></script>
-        <script src="main.js"></script>
-        <script src="env.js"></script>
+        <script src="Xlang.js"></script>
+        <script src="RootVM.js"></script>
     </body>
 </html>

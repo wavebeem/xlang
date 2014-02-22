@@ -23,7 +23,7 @@ block
 ;
 
 statements
-: statement+
+: statement*
 ;
 
 statement
