@@ -11,7 +11,7 @@ button {
     /* border-radius: 0.80em;*/
     background: #729fcf;
     color: #fff;
-    /* box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.10);*/
+    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.05);
 }
 
 button::-moz-focus-inner {
@@ -22,8 +22,9 @@ button::-moz-focus-inner {
 button:disabled {
     background: transparent !important;
     color: rgba(0, 0, 0, 0.40) !important;
+    /* color: rgba(255, 255, 255, 0.40) !important;*/
     box-shadow: none !important;
-    opacity: 0.70;
+    opacity: 0.50;
 }
 
 button:focus,
@@ -33,7 +34,7 @@ button:active {
 
 html {
     font-family: sans-serif;
-    background: #eee;
+    background: #f0f0f0;
     color: #222;
 
     padding: 0;
@@ -103,24 +104,25 @@ textarea,
 #program-toolbar button {
     /* border-radius: 50%;*/
     /* border-radius: 0.50em;*/
-    border-radius: 1em;
+    /* border-radius: 1em;*/
     /* border-radius: 2px;*/
     /* border-radius: 4px;*/
-    margin-right: 10px;
+    margin-right: 1px;
 
-    width:  4.50em;
-    /* width:  2.50em;*/
-    height: 2.75em;
+    /* width:  4.50em;*/
+    /* width:  5.00em;*/
+    /* height: 3.00em;*/
     /* height: 2.50em;*/
 
-    font-size:   16px;
-    line-height: 16px;
+    width:  2.50em;
+    height: 1.50em;
+
+    font-size:   32px;
+    line-height: 32px;
 
     transition:
         box-shadow 0.15s,
         background 0.15s;
-
-    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.05);
 
     /* text-shadow: 0 0px 3px black;*/
 
@@ -129,9 +131,33 @@ textarea,
 }
 
 #program-toolbar button:hover {
-    box-shadow: 0 0 0 5px rgba(128, 192, 224, 0.50);
     cursor: pointer;
 }
+
+#input-area {
+    position: relative;
+    margin-top: 10px;
+    height: 40px;
+}
+
+#the-input {
+    position: absolute;
+    margin: 0;
+    left: 0;
+    right: 60px;
+    height: 100%;
+}
+
+#the-submit {
+    position: absolute;
+    margin: 0;
+    right: 0;
+    width: 60px;
+    height: 100%;
+}
+
+#program-toolbar button:first-child { border-radius: 4px 0 0 4px; }
+#program-toolbar button:last-child  { border-radius: 0 4px 4px 0; }
 
 #program-start { background-color: #4e9a06; }
 #program-stop  { background-color: #cc0000; }

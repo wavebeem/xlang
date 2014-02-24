@@ -17,7 +17,7 @@
             <div id="the-code"></div>
             <div id="program-toolbar">
                 <button id="program-start" data-bind="click: playPause">
-                    <span data-bind="
+                    <span class="icon-play" data-bind="
                         css: 'icon-' + (canPlay() ? 'play' : 'pause')
                     "></span>
                 </button
@@ -36,6 +36,12 @@
         <div id="display-area">
             <canvas id="screen"></canvas>
             <div id="stdout"></div>
+            <div id="input-area">
+                <input type="text" id="the-input">
+                <button id="the-submit">
+                    OK
+                </button>
+            </div>
         </div>
 
         <script src="parser.js"></script>
